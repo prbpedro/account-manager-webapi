@@ -16,10 +16,8 @@ import javax.ws.rs.core.Response;
 import org.slf4j.LoggerFactory;
 
 import com.github.prbpedro.accountmanager.domain.enums.TransferTransactionStatusEnum;
-import com.github.prbpedro.accountmanager.domain.services.DatabaseService;
 import com.github.prbpedro.accountmanager.domain.services.TransferTransactionService;
 import com.github.prbpedro.accountmanager.domain.services.dto.TransferTransactionReturnDto;
-import com.github.prbpedro.accountmanager.domain.services.interfaces.ITransferTransactionService;
 import com.github.prbpedro.accountmanager.domain.util.Startup;
 import com.github.prbpedro.accountmanager.webapi.dto.TransferTransactioReturnModel;
 
