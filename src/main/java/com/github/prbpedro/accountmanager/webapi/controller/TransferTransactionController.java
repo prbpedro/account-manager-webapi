@@ -1,5 +1,7 @@
 package com.github.prbpedro.accountmanager.webapi.controller;
 
+import java.math.BigDecimal;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -9,7 +11,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.github.prbpedro.accountmanager.webapi.dto.TransferTransactionReturnDto;
+import com.github.prbpedro.accountmanager.domain.services.TransferTransactionService;
+import com.github.prbpedro.accountmanager.domain.services.dto.TransferTransactionReturnDto;
+import com.github.prbpedro.accountmanager.domain.util.Startup;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -64,11 +68,8 @@ public class TransferTransactionController {
 			@Pattern(regexp = "^\\d{1,19}\\.?\\d{0,2}$")
 			@Parameter(description = "Ammount to transfer", required = true, schema = @Schema(format = "type: BigDecimal, format: (19,2)"))
 			String ammount) {
-		TransferTransactionReturnDto ret = new TransferTransactionReturnDto();
-
-		ret.setMessage("OUAAAAAAAAAAAAAAA");
-		ret.getErros().add("EITAAAAAAAAAAA");
-		ret.getErros().add("UOUOOOOOOOOOOOOO");
-		return ret;
+		
+		TransferTransactionReturnDto transferResponse = Startup.getContainer().select(TransferTransactionService.class).get().doTransferTransaction(idAccountSender, idAccountBeneficiary, codeBankBeneficiary, codeCurrency, new BigDecimal(ammount));
+		return transferResponse;
 	}	 
 }

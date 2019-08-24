@@ -11,6 +11,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 import org.slf4j.LoggerFactory;
 
+import com.github.prbpedro.accountmanager.domain.util.Startup;
 import com.github.prbpedro.accountmanager.webapi.controller.TransferTransactionController;
 
 import io.swagger.v3.jaxrs2.integration.resources.AcceptHeaderOpenApiResource;
@@ -36,12 +37,15 @@ public class Main {
 			context.setContextPath("/");
 			context.addServlet(apiServlet, "/account-manager/*");
 			
+			Startup.configure();
+			
 			ContextHandlerCollection contexts = new ContextHandlerCollection();
 			contexts.setHandlers(new Handler[] { context });
 			server = new Server(5000);
 			server.setHandler(contexts);
 			server.start();
 			server.join();
+			
 		} catch (Exception ex) {
 			LoggerFactory.getLogger(Main.class).error(ex.getMessage(), ex);
 		} finally {

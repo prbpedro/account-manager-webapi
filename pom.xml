@@ -157,5 +157,11 @@
 			<artifactId>jetty-servlets</artifactId>
 			<version>9.4.20.v20190813</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.github.prbpedro</groupId>
+			<artifactId>account-manager-domain</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 </project>
