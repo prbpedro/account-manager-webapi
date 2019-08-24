@@ -11,6 +11,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 import org.slf4j.LoggerFactory;
 
+import com.github.prbpedro.accountmanager.domain.services.DatabaseService;
 import com.github.prbpedro.accountmanager.domain.util.Startup;
 import com.github.prbpedro.accountmanager.webapi.controller.DatabaseDataController;
 import com.github.prbpedro.accountmanager.webapi.controller.TransferTransactionController;
@@ -23,7 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 		Server server = null;
 		try {
-			System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "TRACE");
+			System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
 			System.setProperty(org.slf4j.impl.SimpleLogger.SHOW_THREAD_NAME_KEY, "true");
 
 			HashSet<Class<?>> he = new HashSet<Class<?>>();
@@ -40,6 +41,7 @@ public class Main {
 			context.addServlet(apiServlet, "/account-manager/*");
 			
 			Startup.configure();
+			Startup.getInjector().getInstance(DatabaseService.class).createDatabase();
 			
 			ContextHandlerCollection contexts = new ContextHandlerCollection();
 			contexts.setHandlers(new Handler[] { context });

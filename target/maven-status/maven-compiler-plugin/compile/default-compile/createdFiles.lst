@@ -1,0 +1,5 @@
+com\github\prbpedro\accountmanager\webapi\dto\TransferTransactionConfirmationModel.class
+com\github\prbpedro\accountmanager\webapi\controller\TransferTransactionController.class
+com\github\prbpedro\accountmanager\webapi\dto\TransferTransactioReturnModel.class
+com\github\prbpedro\accountmanager\webapi\controller\DatabaseDataController.class
+com\github\prbpedro\accountmanager\webapi\Main.class

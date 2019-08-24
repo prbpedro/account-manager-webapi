@@ -22,6 +22,7 @@ public class TransferTransactioReturnModel {
 		
 		if(dto.getTransferInformation()!=null) {
 			setTransferTransactionConfirmation(new TransferTransactionConfirmationModel());
+			getTransferTransactionConfirmation().setId(dto.getTransferInformation().getId());
 			getTransferTransactionConfirmation().setSenderId(dto.getTransferInformation().getSenderId());
 			getTransferTransactionConfirmation().setBeneficiaryId(dto.getTransferInformation().getBeneficiaryId());
 			getTransferTransactionConfirmation().setCurrencyCode(currencyCode);

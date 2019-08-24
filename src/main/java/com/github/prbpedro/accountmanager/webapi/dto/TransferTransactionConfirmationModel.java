@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class TransferTransactionConfirmationModel {
 	
+	private long id;
+	
 	private String senderId;
 	
 	private String beneficiaryId;
@@ -55,5 +57,13 @@ public class TransferTransactionConfirmationModel {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 }

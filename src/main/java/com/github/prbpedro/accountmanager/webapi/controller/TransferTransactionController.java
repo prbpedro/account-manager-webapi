@@ -16,6 +16,8 @@ import javax.ws.rs.core.Response;
 import org.slf4j.LoggerFactory;
 
 import com.github.prbpedro.accountmanager.domain.enums.TransferTransactionStatusEnum;
+import com.github.prbpedro.accountmanager.domain.services.DatabaseService;
+import com.github.prbpedro.accountmanager.domain.services.TransferTransactionService;
 import com.github.prbpedro.accountmanager.domain.services.dto.TransferTransactionReturnDto;
 import com.github.prbpedro.accountmanager.domain.services.interfaces.ITransferTransactionService;
 import com.github.prbpedro.accountmanager.domain.util.Startup;
@@ -80,7 +82,7 @@ public class TransferTransactionController {
 			@Parameter(description = "Ammount to transfer", required = true, schema = @Schema(format = "type: BigDecimal, format: (19,2)"))
 			String ammount) {
 		try {
-			TransferTransactionReturnDto transferResponse = Startup.getContainer().select(ITransferTransactionService.class).get()
+			TransferTransactionReturnDto transferResponse = Startup.getInjector().getInstance(TransferTransactionService.class)
 					.doTransferTransaction(senderAccountId, beneficiaryAccountId, beneficiaryBankCode, currencyCode, new BigDecimal(ammount));
 			TransferTransactioReturnModel returnModel = new TransferTransactioReturnModel(transferResponse, currencyCode);
 			
