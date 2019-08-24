@@ -12,6 +12,7 @@ import org.glassfish.jersey.servlet.ServletContainer;
 import org.slf4j.LoggerFactory;
 
 import com.github.prbpedro.accountmanager.domain.util.Startup;
+import com.github.prbpedro.accountmanager.webapi.controller.DatabaseDataController;
 import com.github.prbpedro.accountmanager.webapi.controller.TransferTransactionController;
 
 import io.swagger.v3.jaxrs2.integration.resources.AcceptHeaderOpenApiResource;
@@ -27,6 +28,7 @@ public class Main {
 
 			HashSet<Class<?>> he = new HashSet<Class<?>>();
 			he.add(TransferTransactionController.class);
+			he.add(DatabaseDataController.class);
 			ResourceConfig resourceConfig = new ResourceConfig(he);
 			resourceConfig.registerClasses(OpenApiResource.class, AcceptHeaderOpenApiResource.class);
 

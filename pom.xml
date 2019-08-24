@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.prbpedro</groupId>
 	<artifactId>account-manager-webapi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<build>
 		<plugins>
@@ -161,7 +161,7 @@
 		<dependency>
 			<groupId>com.github.prbpedro</groupId>
 			<artifactId>account-manager-domain</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
 </project>
