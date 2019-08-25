@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TransferTransactioReturnModel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">account-manager-webapi</a> &gt; <a href="index.source.html" class="el_package">com.github.prbpedro.accountmanager.webapi.dto</a> &gt; <span class="el_source">TransferTransactioReturnModel.java</span></div><h1>TransferTransactioReturnModel.java</h1><pre class="source lang-java linenums">package com.github.prbpedro.accountmanager.webapi.dto;
+
+import java.util.List;
+
+import com.github.prbpedro.accountmanager.domain.enums.TransferTransactionStatusEnum;
+import com.github.prbpedro.accountmanager.domain.services.dto.TransferTransactionReturnDto;
+
+public class TransferTransactioReturnModel {
+
+	private TransferTransactionStatusEnum status;
+	
+	private List&lt;String&gt; messages;
+	
+	private TransferTransactionConfirmationModel transferTransactionConfirmation;
+	
+<span class="nc" id="L16">	public TransferTransactioReturnModel() {</span>
+<span class="nc" id="L17">	}</span>
+	
+<span class="fc" id="L19">	public TransferTransactioReturnModel(TransferTransactionReturnDto dto, String currencyCode) {</span>
+<span class="fc" id="L20">		setStatus(dto.getStatus());</span>
+<span class="fc" id="L21">		setMessages(dto.getMessages());</span>
+		
+<span class="fc bfc" id="L23" title="All 2 branches covered.">		if(dto.getTransferInformation()!=null) {</span>
+<span class="fc" id="L24">			setTransferTransactionConfirmation(new TransferTransactionConfirmationModel());</span>
+<span class="fc" id="L25">			getTransferTransactionConfirmation().setId(dto.getTransferInformation().getId());</span>
+<span class="fc" id="L26">			getTransferTransactionConfirmation().setSenderId(dto.getTransferInformation().getSenderId());</span>
+<span class="fc" id="L27">			getTransferTransactionConfirmation().setBeneficiaryId(dto.getTransferInformation().getBeneficiaryId());</span>
+<span class="fc" id="L28">			getTransferTransactionConfirmation().setCurrencyCode(currencyCode);</span>
+<span class="fc" id="L29">			getTransferTransactionConfirmation().setValue(dto.getTransferInformation().getValue());</span>
+<span class="fc" id="L30">			getTransferTransactionConfirmation().setStatus(dto.getTransferInformation().getStatus());</span>
+		}
+<span class="fc" id="L32">	}</span>
+
+	public TransferTransactionStatusEnum getStatus() {
+<span class="fc" id="L35">		return status;</span>
+	}
+
+	public void setStatus(TransferTransactionStatusEnum status) {
+<span class="fc" id="L39">		this.status = status;</span>
+<span class="fc" id="L40">	}</span>
+
+	public List&lt;String&gt; getMessages() {
+<span class="fc" id="L43">		return messages;</span>
+	}
+
+	public void setMessages(List&lt;String&gt; messages) {
+<span class="fc" id="L47">		this.messages = messages;</span>
+<span class="fc" id="L48">	}</span>
+
+	public TransferTransactionConfirmationModel getTransferTransactionConfirmation() {
+<span class="fc" id="L51">		return transferTransactionConfirmation;</span>
+	}
+
+	public void setTransferTransactionConfirmation(TransferTransactionConfirmationModel transferTransactionConfirmation) {
+<span class="fc" id="L55">		this.transferTransactionConfirmation = transferTransactionConfirmation;</span>
+<span class="fc" id="L56">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

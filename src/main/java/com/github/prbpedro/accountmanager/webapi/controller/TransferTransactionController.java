@@ -80,7 +80,7 @@ public class TransferTransactionController {
 			@Parameter(description = "Ammount to transfer", required = true, schema = @Schema(format = "type: BigDecimal, format: (19,2)"))
 			String ammount) {
 		try {
-			TransferTransactionReturnDto transferResponse = Startup.getInjector().getInstance(TransferTransactionService.class)
+			TransferTransactionReturnDto transferResponse = getService()
 					.doTransferTransaction(senderAccountId, beneficiaryAccountId, beneficiaryBankCode, currencyCode, new BigDecimal(ammount));
 			TransferTransactioReturnModel returnModel = new TransferTransactioReturnModel(transferResponse, currencyCode);
 			
@@ -104,5 +104,9 @@ public class TransferTransactionController {
 			transferModel.setStatus(TransferTransactionStatusEnum.ERROR_PROCESSING);
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(transferModel).build();
 		}
+	}
+
+	private TransferTransactionService getService() {
+		return Startup.getInjector().getInstance(TransferTransactionService.class);
 	}	 
 }

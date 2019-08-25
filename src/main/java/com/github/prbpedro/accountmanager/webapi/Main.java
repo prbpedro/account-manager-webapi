@@ -21,8 +21,9 @@ import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 
 public class Main {
 
+	private static Server server;
+	
 	public static void main(String[] args) {
-		Server server = null;
 		try {
 			System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
 			System.setProperty(org.slf4j.impl.SimpleLogger.SHOW_THREAD_NAME_KEY, "true");
@@ -56,6 +57,12 @@ public class Main {
 			if (server != null) {
 				server.destroy();
 			}
+		}
+	}
+	
+	public static void stopServer() throws Exception {
+		if(server!=null) {
+			server.stop();
 		}
 	}
 }
