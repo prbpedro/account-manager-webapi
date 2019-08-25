@@ -21,7 +21,6 @@ public class MainTest {
 		
 		Thread.sleep(10000);
 
-
 		HttpResponse<String> response = Unirest.post("http://localhost:5000/account-manager/transfer/do")
 				.header("Content-Type", "application/x-www-form-urlencoded").header("cache-control", "no-cache")
 				.body("sender-account-id=ACCOUNT_1&beneficiary-account-id=ACCOUNT_2&beneficiary-bank-code=REVOLUT!!!!!&currency-code=USD&ammount=1")
