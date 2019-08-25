@@ -3,4 +3,4 @@ account-manager-webapi,com.github.prbpedro.accountmanager.webapi.dto,TransferTra
 account-manager-webapi,com.github.prbpedro.accountmanager.webapi.dto,TransferTransactionConfirmationModel,0,45,0,0,0,20,0,13,0,13
 account-manager-webapi,com.github.prbpedro.accountmanager.webapi.controller,TransferTransactionController,27,59,1,5,6,11,1,5,0,3
 account-manager-webapi,com.github.prbpedro.accountmanager.webapi.controller,DatabaseDataController,5,13,0,0,2,2,0,2,0,2
-account-manager-webapi,com.github.prbpedro.accountmanager.webapi,Main,13,98,2,2,5,24,3,2,1,2
+account-manager-webapi,com.github.prbpedro.accountmanager.webapi,Main,13,99,2,2,4,25,3,2,1,2
