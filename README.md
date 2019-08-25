@@ -18,7 +18,7 @@ Used technologies:
 
 ## Project desciption
 
-This project was built to demonstrate the use of the technologies described above by providing a REST service capable of making a transfer transaction in a banking system. 
+This is a JAVA Eclipse project built to demonstrate the use of the technologies described above by providing a REST service capable of making a transfer transaction in a banking system. 
 
 It references the [account-manager-domain](https://github.com/prbpedro/account-manager-domain) project, its documentation contains information about data entered for testing at server startup, possible application configurations, and rules for performing transfer transactions.
 
