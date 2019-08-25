@@ -24,7 +24,6 @@ public class MainTest {
 
 		HttpResponse<String> response = Unirest.post("http://localhost:5000/account-manager/transfer/do")
 				.header("Content-Type", "application/x-www-form-urlencoded").header("cache-control", "no-cache")
-				.header("Postman-Token", "2a0c5b3a-d9cb-481f-aa02-20d903090bd0")
 				.body("sender-account-id=ACCOUNT_1&beneficiary-account-id=ACCOUNT_2&beneficiary-bank-code=REVOLUT!!!!!&currency-code=USD&ammount=1")
 				.asString();
 		
@@ -32,7 +31,6 @@ public class MainTest {
 		
 		response = Unirest.post("http://localhost:5000/account-manager/transfer/do")
 				.header("Content-Type", "application/x-www-form-urlencoded").header("cache-control", "no-cache")
-				.header("Postman-Token", "2a0c5b3a-d9cb-481f-aa02-20d903090bd0")
 				.body("sender-account-id=ACCOUNT_1999&beneficiary-account-id=ACCOUNT_2&beneficiary-bank-code=REVOLUT!!!!!&currency-code=USD&ammount=1")
 				.asString();
 		
@@ -40,7 +38,6 @@ public class MainTest {
 		
 		response = Unirest.post("http://localhost:5000/account-manager/transfer/do")
 				.header("Content-Type", "application/x-www-form-urlencoded").header("cache-control", "no-cache")
-				.header("Postman-Token", "2a0c5b3a-d9cb-481f-aa02-20d903090bd0")
 				.body("sender-account-id=ACCOUNT_1&beneficiary-account-id=ACCOUNT_2&beneficiary-bank-code=REVOLUT!!!!!&currency-code=USD&ammount=10000000")
 				.asString();
 		
@@ -48,7 +45,6 @@ public class MainTest {
 		
 		response = Unirest.get("http://localhost:5000/account-manager/data")
 				  .header("cache-control", "no-cache")
-				  .header("Postman-Token", "d33a1266-97d0-4b7b-adbb-09fabfe04004")
 				  .asString();
 		
 		Assert.assertEquals(200, response.getStatus());
