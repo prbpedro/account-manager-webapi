@@ -16,7 +16,6 @@
 	<artifactId>account-manager-webapi</artifactId>
 	<version>1.0.0</version>
 	
-	
 	<repositories>
 	    <repository>
 	        <id>mvn-repo</id>
@@ -126,7 +125,7 @@
   			        </dependency>
 		            </dependencies>
 			    <configuration>
-				<repoToken>JEakt2T3KVw6BwXar0oqmvFB2TMQeIOT5</repoToken>
+				<repoToken>TLNjJySand3Oog9XQMUVIX9vzWhRLKCdT</repoToken>
 			    </configuration>
 			</plugin>
 		</plugins>
