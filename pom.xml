@@ -15,6 +15,20 @@
 	<groupId>com.github.prbpedro</groupId>
 	<artifactId>account-manager-webapi</artifactId>
 	<version>1.0.0</version>
+	
+	
+	<repositories>
+	    <repository>
+	        <id>mvn-repo</id>
+	        <url>https://raw.githubusercontent.com/prbpedro/prbpedro-maven-repo/master</url>
+	        <releases>
+	            <enabled>true</enabled>
+	        </releases>
+	        <snapshots>
+	            <enabled>true</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
 
 	<build>
 		<plugins>

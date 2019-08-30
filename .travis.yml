@@ -1,6 +1,6 @@
 language: java
 script:
-  - mvn clean test jacoco:report
+  - mvn package
 after_success:
   - mvn coveralls:report
 jdk:
