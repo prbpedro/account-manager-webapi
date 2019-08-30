@@ -100,6 +100,21 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+			    <groupId>org.eluder.coveralls</groupId>
+			    <artifactId>coveralls-maven-plugin</artifactId>
+			    <version>4.3.0</version>
+		            <dependencies>
+ 			        <dependency>
+ 			            <groupId>javax.xml.bind</groupId>
+  			            <artifactId>jaxb-api</artifactId>
+   			            <version>2.2.3</version>
+  			        </dependency>
+		            </dependencies>
+			    <configuration>
+				<repoToken>JEakt2T3KVw6BwXar0oqmvFB2TMQeIOT5</repoToken>
+			    </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
