@@ -14,7 +14,7 @@ Used technologies:
 * Swagger (To generate JSON documentation)
 * Maven (Compilation and automation tool)
 * JUnit (Test framework)
-* jacoco-maven-plugin (Test code coverege amven plugin)
+* jacoco-maven-plugin (Test code coverege maven plugin)
 * Github repository
 * Travis CL (Continuous integration service )
 * Coverall (Continuous code coverage)
