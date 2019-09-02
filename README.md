@@ -1,6 +1,7 @@
 # account-manager-webapi
 [![Travis](https://api.travis-ci.org/prbpedro/account-manager-webapi.svg?branch=master)](https://travis-ci.org/prbpedro/account-manager-webapi/)
 [![Coverage Status](https://coveralls.io/repos/github/prbpedro/account-manager-webapi/badge.svg?branch=master)](https://coveralls.io/github/prbpedro/account-manager-webapi?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Technologies 
 
 Used technologies:
